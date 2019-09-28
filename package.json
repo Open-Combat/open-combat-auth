@@ -1,0 +1,34 @@
+{
+  "name": "open-conquest-auth",
+  "version": "0.0.1",
+  "description": "A simple JWT authentication server meant for use in the Open Conquest application.",
+  "main": "server.js",
+  "scripts": {
+    "test": "node test/integration.js",
+    "start": "node src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zachwildd/open-conquest-auth.git"
+  },
+  "keywords": [],
+  "author": "Zach Wild",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zachwildd/open-conquest-auth/issues"
+  },
+  "homepage": "https://github.com/zachwildd/open-conquest-auth#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.6.11",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "winston": "^3.2.1"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "newman": "^4.5.4",
+    "mocha": "^6.2.0"
+  }
+}

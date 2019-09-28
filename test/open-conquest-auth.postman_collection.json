@@ -1,0 +1,178 @@
+{
+	"info": {
+		"_postman_id": "1130e28d-6a8a-4fbf-9288-23aa2770f1d8",
+		"name": "open-conquest-auth",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"item": [
+				{
+					"name": "Register First User (Success)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "daea6104-950d-4c56-9ca5-267062f2aad6",
+								"exec": [
+									"var responseJSON = JSON.parse(responseBody);",
+									"",
+									"tests['Response has \"email\" property'] = responseJSON.hasOwnProperty('email');",
+									"tests['Response has \"username\" property'] = responseJSON.hasOwnProperty('username');",
+									"tests['Response has \"jwt\" property'] = responseJSON.hasOwnProperty('jwt');",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"firstuser@test.com\",\n  \"username\": \"firstuser\",\n  \"password\": \"ValidPassword123\"\n}"
+						},
+						"url": {
+							"raw": "{{endpoint}}/register",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register Second User (Success)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "163abd36-59fe-47c2-9fe1-29e39aa73624",
+								"exec": [
+									"var responseJSON = JSON.parse(responseBody);",
+									"",
+									"tests['Response has \"email\" property'] = responseJSON.hasOwnProperty('email');",
+									"tests['Response has \"username\" property'] = responseJSON.hasOwnProperty('username');",
+									"tests['Response has \"jwt\" property'] = responseJSON.hasOwnProperty('jwt');",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"seconduser@test.com\",\n  \"username\": \"seconduser\",\n  \"password\": \"ValidPassword123\"\n}"
+						},
+						"url": {
+							"raw": "{{endpoint}}/register",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register First User Again (Failure)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "1c2d9a88-14e7-4a33-b8dc-6ecbccb1deb5",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"firstuser@test.com\",\n  \"username\": \"firstuser\",\n  \"password\": \"ValidPassword123\"\n}"
+						},
+						"url": {
+							"raw": "{{endpoint}}/register",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"item": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "696e7ad5-cada-4e7d-b99c-82b0629289c6",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "2f7ce48d-2aa1-4add-a7ef-fe4846b66bbf",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "323144e5-b8e8-4c8d-8737-b48e8873ccae",
+			"key": "endpoint",
+			"value": "localhost:5000",
+			"type": "string"
+		}
+	]
+}
