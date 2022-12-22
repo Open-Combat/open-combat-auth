@@ -20,7 +20,7 @@
   "homepage": "https://github.com/zachwildd/open-conquest-auth#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "jsonwebtoken": "^8.5.1",
+    "jsonwebtoken": "^9.0.0",
     "mongoose": "^5.6.11",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
